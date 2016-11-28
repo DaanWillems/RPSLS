@@ -14,42 +14,44 @@ namespace RPSLSService
     {
         PlayAttempt _attempt = new PlayAttempt();
 
-        Dictionary<string, List<string>> Symbols = new Dictionary<string, List<string>>()
+
+       Dictionary<Symbols, List<Symbols>> Symbols = new Dictionary<Symbols, List<Symbols>>()
         {
-            { "Rock", new List<string>()
+            {RPSLSService.Symbols.Rock, new List<Symbols>()
                 {
-                    "Scissor",
-                    "Lizard"
+                    RPSLSService.Symbols.Scissor,
+                    RPSLSService.Symbols.Lizard
                 }
             },
-            { "Paper", new List<string>()
+            {RPSLSService.Symbols.Paper, new List<Symbols>()
                 {
-                    "Rock",
-                    "Spock"
+                    RPSLSService.Symbols.Rock,
+                    RPSLSService.Symbols.Spock
                 }
             },
-            { "Scissor", new List<string>()
+            { RPSLSService.Symbols.Scissor, new List<Symbols>()
                 {
-                    "Paper",
-                    "Lizard"
+                    RPSLSService.Symbols.Paper,
+                    RPSLSService.Symbols.Lizard
                 }
             },
-            { "Lizard", new List<string>()
+            { RPSLSService.Symbols.Lizard, new List<Symbols>()
                 {
-                    "Paper",
-                    "Spock"
+                    RPSLSService.Symbols.Paper,
+                    RPSLSService.Symbols.Spock
                 }
             },
-            { "Spock", new List<string>()
+            { RPSLSService.Symbols.Spock, new List<Symbols>()
                 {
-                    "Rock",
-                    "Scissor"
+                    RPSLSService.Symbols.Rock,
+                    RPSLSService.Symbols.Scissor
                 }
             }
         };
+        
         public PlayAttempt DoPlay(PlayAttempt value)
         {
-            if (String.IsNullOrEmpty(value.ComputerSymbol))
+            if (value.ComputerSymbol == RPSLSService.Symbols.Empty)
             {
                 Random rand = new Random();
                 value.ComputerSymbol = Symbols.ElementAt(rand.Next(0, Symbols.Count)).Key;

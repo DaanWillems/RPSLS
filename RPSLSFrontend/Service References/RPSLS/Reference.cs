@@ -23,7 +23,7 @@ namespace RPSLSFrontend.RPSLS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ComputerSymbolField;
+        private RPSLSFrontend.RPSLS.Symbols ComputerSymbolField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateTimeField;
@@ -32,7 +32,7 @@ namespace RPSLSFrontend.RPSLS {
         private string PlayerNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlayerSymbolField;
+        private RPSLSFrontend.RPSLS.Symbols PlayerSymbolField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StringValueField;
@@ -51,12 +51,12 @@ namespace RPSLSFrontend.RPSLS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ComputerSymbol {
+        public RPSLSFrontend.RPSLS.Symbols ComputerSymbol {
             get {
                 return this.ComputerSymbolField;
             }
             set {
-                if ((object.ReferenceEquals(this.ComputerSymbolField, value) != true)) {
+                if ((this.ComputerSymbolField.Equals(value) != true)) {
                     this.ComputerSymbolField = value;
                     this.RaisePropertyChanged("ComputerSymbol");
                 }
@@ -90,12 +90,12 @@ namespace RPSLSFrontend.RPSLS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlayerSymbol {
+        public RPSLSFrontend.RPSLS.Symbols PlayerSymbol {
             get {
                 return this.PlayerSymbolField;
             }
             set {
-                if ((object.ReferenceEquals(this.PlayerSymbolField, value) != true)) {
+                if ((this.PlayerSymbolField.Equals(value) != true)) {
                     this.PlayerSymbolField = value;
                     this.RaisePropertyChanged("PlayerSymbol");
                 }
@@ -136,6 +136,29 @@ namespace RPSLSFrontend.RPSLS {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Symbols", Namespace="http://schemas.datacontract.org/2004/07/RPSLSService")]
+    public enum Symbols : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Rock = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Paper = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Scissor = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Lizard = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Spock = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Empty = 5,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

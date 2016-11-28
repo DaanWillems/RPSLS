@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RPSLSFrontend.RPSLS;
 
 namespace RPSLSFrontend
 {
@@ -23,6 +24,7 @@ namespace RPSLSFrontend
         public MainWindow()
         {
             InitializeComponent();
+            ComboBox.ItemsSource = Enum.GetValues(typeof(Symbols)).Cast<Symbols>();
         }
     }
 }

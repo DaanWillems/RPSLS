@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPSLSFrontend"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:rpsls="clr-namespace:RPSLSFrontend.RPSLS"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         DataContext="{Binding Main, Source={StaticResource Locator }}">
@@ -21,7 +23,7 @@
             <TextBox Text="{Binding Name}" />
         </StackPanel>
         <StackPanel Margin="10,35,10,10" Grid.Column="1" Grid.Row="0">
-            <ComboBox ItemsSource="{Binding Symbols}" SelectedValuePath="Content" SelectedItem="{Binding SelectedSymbol}" />
+            <ComboBox x:Name="ComboBox" SelectedValuePath="Content" SelectedItem="{Binding SelectedSymbol}" />
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Margin="10" Grid.Column="1" Grid.Row="1">
             <Button Command="{Binding DoPlayCommand}" Margin="0,0,0,10" Content="Play" />

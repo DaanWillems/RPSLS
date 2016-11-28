@@ -2,13 +2,24 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RPSLSService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RPSLSService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="PlayAttempt">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ComputerSymbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComputerSymbol" type="tns:Symbols" />
       <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PlayerName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlayerSymbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayerSymbol" type="tns:Symbols" />
       <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Winner" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PlayAttempt" nillable="true" type="tns:PlayAttempt" />
+  <xs:simpleType name="Symbols">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Rock" />
+      <xs:enumeration value="Paper" />
+      <xs:enumeration value="Scissor" />
+      <xs:enumeration value="Lizard" />
+      <xs:enumeration value="Spock" />
+      <xs:enumeration value="Empty" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Symbols" nillable="true" type="tns:Symbols" />
 </xs:schema>

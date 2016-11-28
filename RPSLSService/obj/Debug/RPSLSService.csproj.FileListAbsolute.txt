@@ -18,3 +18,4 @@ D:\School\RPSLSFrontend\RPSLSService\obj\Debug\RPSLSService.dll
 D:\School\RPSLSFrontend\RPSLSService\obj\Debug\RPSLSService.pdb
 D:\School\RPSLSFrontend\RPSLSService\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\School\RPSLSFrontend\RPSLSService\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\School\RPSLSFrontend\RPSLSService\obj\Debug\RPSLSService.csprojResolveAssemblyReference.cache

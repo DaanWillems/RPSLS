@@ -15,8 +15,8 @@ namespace ServiceTests
             PlayAttempt attempt = new PlayAttempt()
             {
                 PlayerName = "Daan",
-                PlayerSymbol = "Lizard",
-                ComputerSymbol = "Spock"
+                PlayerSymbol = RPSLSService.Symbols.Scissor,
+                ComputerSymbol = RPSLSService.Symbols.Lizard
             };
             //--Run
             PlayAttempt result = s.DoPlay(attempt);
@@ -32,8 +32,8 @@ namespace ServiceTests
             PlayAttempt attempt = new PlayAttempt()
             {
                 PlayerName = "Daan",
-                PlayerSymbol = "Rock",
-                ComputerSymbol = "Paper"
+                PlayerSymbol = RPSLSService.Symbols.Rock,
+                ComputerSymbol = RPSLSService.Symbols.Paper
             };
             //--Run
             PlayAttempt result = s.DoPlay(attempt);
@@ -49,8 +49,8 @@ namespace ServiceTests
             PlayAttempt attempt = new PlayAttempt()
             {
                 PlayerName = "Daan",
-                PlayerSymbol = "Scissor",
-                ComputerSymbol = "Lizard"
+                PlayerSymbol =  RPSLSService.Symbols.Scissor,
+                ComputerSymbol = RPSLSService.Symbols.Lizard
             };
             //--Run
             PlayAttempt result = s.DoPlay(attempt);
@@ -66,8 +66,8 @@ namespace ServiceTests
             PlayAttempt attempt = new PlayAttempt()
             {
                 PlayerName = "Daan",
-                PlayerSymbol = "Scissor",
-                ComputerSymbol = "Rock"
+                PlayerSymbol = RPSLSService.Symbols.Scissor,
+                ComputerSymbol = RPSLSService.Symbols.Rock
             };
             //--Run
             PlayAttempt result = s.DoPlay(attempt);
@@ -83,8 +83,8 @@ namespace ServiceTests
             PlayAttempt attempt = new PlayAttempt()
             {
                 PlayerName = "Daan",
-                PlayerSymbol = "Scissor",
-                ComputerSymbol = "Scissor"
+                PlayerSymbol = RPSLSService.Symbols.Scissor,
+                ComputerSymbol = RPSLSService.Symbols.Scissor
             };
             //--Run
             PlayAttempt result = s.DoPlay(attempt);

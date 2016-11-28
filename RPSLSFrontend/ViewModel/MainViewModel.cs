@@ -20,9 +20,9 @@ namespace RPSLSFrontend.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private string _selectedSymbol;
+        private Symbols _selectedSymbol;
 
-        public string SelectedSymbol
+        public Symbols SelectedSymbol
         {
             get
             {
@@ -30,16 +30,14 @@ namespace RPSLSFrontend.ViewModel
             }
             set
             {
-                ComputerSymbol = "";
-                Winner = "";
                 _selectedSymbol = value;
                 base.RaisePropertyChanged();
             }
         }
 
-        private string _computerSymbol;
+        private Symbols _computerSymbol;
 
-        public string ComputerSymbol
+        public Symbols ComputerSymbol
         {
             get
             {
@@ -88,31 +86,30 @@ namespace RPSLSFrontend.ViewModel
         private RPSLS.IService service;
         public MainViewModel()
         {
-            Symbols = new ObservableCollection<string>()
-            {
-                "Rock",
-                "Paper",
-                "Scissor",
-                "Lizard",
-                "Spock"
-            };
             DoPlayCommand = new RelayCommand(DoPlay);
             string endpointName = "BasicHttpsBinding_IService";
             service = new RPSLS.ServiceClient(endpointName);
+            ComputerSymbol = RPSLS.Symbols.Empty;
         }
-        private bool CanPlay()
-        {
-            if (string.IsNullOrEmpty(_name) || string.IsNullOrEmpty(_selectedSymbol))
-                return false;
-            return true;
-        }
+
         private void DoPlay()
         {
-            PlayAttempt attempt = new PlayAttempt();
-            attempt.PlayerName = _name;
-            attempt.PlayerSymbol = SelectedSymbol;
+            if (string.IsNullOrEmpty(_name) || _selectedSymbol == RPSLS.Symbols.Empty)
+                return;
+
+            PlayAttempt attempt = new PlayAttempt()
+            {
+                PlayerName = _name,
+                PlayerSymbol = SelectedSymbol,
+                ComputerSymbol = RPSLS.Symbols.Empty
+            };
+
+            //Make call to server
             PlayAttempt result = service.DoPlay(attempt);
+            //Update ComputerSymbol
             ComputerSymbol = result.ComputerSymbol;
+
+            //Print winner name
             if (result.Winner.Equals("Player"))
                 Winner = _name;
             else

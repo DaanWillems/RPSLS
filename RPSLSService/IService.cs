@@ -26,8 +26,8 @@ namespace RPSLSService
         private string winner;
         private DateTime _dateTime;
 
-        private string playerSymbol;
-        private string computerSymbol;
+        private Symbols playerSymbol;
+        private Symbols computerSymbol;
 
         [DataMember]
         public string PlayerName
@@ -44,14 +44,14 @@ namespace RPSLSService
         }
 
         [DataMember]
-        public string PlayerSymbol
+        public Symbols PlayerSymbol
         {
             get { return playerSymbol; }
             set { playerSymbol = value; }
         }
 
         [DataMember]
-        public string ComputerSymbol
+        public Symbols ComputerSymbol
         {
             get { return computerSymbol; }
             set { computerSymbol = value; }
@@ -71,5 +71,22 @@ namespace RPSLSService
             get { return _dateTime; }
             set { _dateTime = value; }
         }
+    }
+    [DataContract]
+    public enum Symbols
+    {
+        [EnumMember]
+        Empty,
+        [EnumMember]
+        Rock,
+        [EnumMember]
+        Paper,
+        [EnumMember]
+        Scissor,
+        [EnumMember]
+        Lizard,
+        [EnumMember]
+        Spock
+
     }
 }
