@@ -1,0 +1,10 @@
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\ApplicationInsights.config
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\ServiceTests.dll
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\ServiceTests.pdb
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\RPSLSService.dll
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\RPSLSService.pdb
+D:\School\RPSLSFrontend\ServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\School\RPSLSFrontend\ServiceTests\obj\Debug\ServiceTests.csprojResolveAssemblyReference.cache
+D:\School\RPSLSFrontend\ServiceTests\obj\Debug\ServiceTests.dll
+D:\School\RPSLSFrontend\ServiceTests\obj\Debug\ServiceTests.pdb
